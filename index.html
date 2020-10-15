@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+    <!-- Yr11 Yearly 2017 Q31
+    Consider the following fragment of code:
+ 
+	1. BEGIN Peach(pip)
+	2. RETURN pip * 1.1
+	3. END Peach
+	4.  
+	5. BEGIN Main
+	6. FOR yum from 1 to 20
+	7. PRINT(“Hmm, “ + yum + “ gives “ + Peach(yum))
+	8. NEXT
+	9. END Main
+ 
+    Re-write the code above, including a more meaningful Print statement. 
+    Re-name the subroutine and make other changes you think will help 
+    improve readability and maintainability.
+    -->
+<head>
+    <title>Yum, Yum, Yum</title>
+    <meta charset="utf-8" />
+    <script type='text/javascript'>
+        function Peach(pip) {
+            return pip * 1.1;
+        }
+        function Main() {
+            var yum = document.getElementById('txtPrice').value;
+            document.getElementById('txtGST_price').value = 'Hmm, ' + yum + ' gives ' + Peach(yum);
+        }
+    </script>
+</head>
+<body>
+    <h1>Yum, Peaches &amp; Pips (Original question)</h1><br />
+    Enter something!<br />
+    <form id="input">
+        <textarea id="txtPrice" rows="1" cols="30"></textarea>
+        <input id="Run" type="Button" value="run" onclick="Main()" /><br /> <br /> 
+        The code returns:<br />   
+        <textarea id="txtGST_price" rows="3" cols="30"></textarea>
+    </form>
+</body>
+</html>
