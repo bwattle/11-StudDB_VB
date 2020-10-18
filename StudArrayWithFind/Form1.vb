@@ -63,7 +63,7 @@
         txtGender.Text = ""
         txtAvMk.Text = ""
         txtPhone.Text = ""
-        chkPaid.Text = False
+        chkPaid.Checked = False
         displayList()
     End Sub
     Private Sub displayList()
@@ -76,9 +76,5 @@
                               students(i).avMk & " - " & students(i).phoneNo & " - " &
                               students(i).paid & ".")
         Next
-    End Sub
-
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-
     End Sub
 End Class
