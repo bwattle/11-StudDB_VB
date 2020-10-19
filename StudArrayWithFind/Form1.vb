@@ -60,14 +60,8 @@
                         txtGender.Focus()
                         Exit Sub
                     End If
-                    txtGender.Focus()
-                    Exit Sub
                 End If
-                txtGender.Focus()
-                Exit Sub
             End If
-            txtGender.Focus()
-            Exit Sub
         End If
 
         'place text from text boxes into the array - first students(0), then students(1), students(2) etc
