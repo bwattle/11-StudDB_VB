@@ -48,6 +48,28 @@
         displayList()
     End Sub
     Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
+
+        'Verify that the gender field holds "m" of "f"
+        'ASCII for F=70, M=77, f=102, m=109
+        'MsgBox("ASCII code is " & Asc(txtGender.Text), MsgBoxStyle.Exclamation, "Problem with Gender")
+        If Asc(txtGender.Text) <> 70 Then
+            If Asc(txtGender.Text) <> 77 Then
+                If Asc(txtGender.Text) <> 102 Then
+                    If Asc(txtGender.Text) <> 109 Then
+                        MsgBox("Please enter 'm' or 'f'", MsgBoxStyle.Exclamation, "Problem with Gender")
+                        txtGender.Focus()
+                        Exit Sub
+                    End If
+                    txtGender.Focus()
+                    Exit Sub
+                End If
+                txtGender.Focus()
+                Exit Sub
+            End If
+            txtGender.Focus()
+            Exit Sub
+        End If
+
         'place text from text boxes into the array - first students(0), then students(1), students(2) etc
         students(studentCount).firstname = txtFirstName.Text
         students(studentCount).lastname = txtLastName.Text
