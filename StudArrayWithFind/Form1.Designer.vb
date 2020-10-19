@@ -143,7 +143,7 @@ Partial Class Form1
         '
         'btnAddStud
         '
-        Me.btnAddStud.Location = New System.Drawing.Point(52, 159)
+        Me.btnAddStud.Location = New System.Drawing.Point(599, 159)
         Me.btnAddStud.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.btnAddStud.Name = "btnAddStud"
         Me.btnAddStud.Size = New System.Drawing.Size(139, 28)
@@ -174,7 +174,7 @@ Partial Class Form1
         'chkPaid
         '
         Me.chkPaid.AutoSize = True
-        Me.chkPaid.Location = New System.Drawing.Point(497, 166)
+        Me.chkPaid.Location = New System.Drawing.Point(210, 166)
         Me.chkPaid.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.chkPaid.Name = "chkPaid"
         Me.chkPaid.Size = New System.Drawing.Size(58, 21)
@@ -184,7 +184,7 @@ Partial Class Form1
         '
         'txtPhone
         '
-        Me.txtPhone.Location = New System.Drawing.Point(335, 164)
+        Me.txtPhone.Location = New System.Drawing.Point(48, 164)
         Me.txtPhone.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.txtPhone.Mask = "0000-000-000"
         Me.txtPhone.Name = "txtPhone"
@@ -194,7 +194,7 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(333, 146)
+        Me.Label7.Location = New System.Drawing.Point(46, 146)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(49, 17)
