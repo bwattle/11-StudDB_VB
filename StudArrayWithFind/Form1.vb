@@ -48,8 +48,15 @@
         displayList()
     End Sub
     Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
+        'Validate that first name field is NOT blank
+        If txtFirstName.Text = "" Then
+            'MsgBox("Please enter a 'first name'", MsgBoxStyle.Exclamation, "Check First Name field")
+            MessageBox.Show("Please enter a 'first name'", "Check First Name field", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            txtFirstName.Focus()
+            Exit Sub
+        End If
 
-        'Verify that the gender field holds "m" of "f"
+        'Validate that the gender field holds "m" of "f"
         'ASCII for F=70, M=77, f=102, m=109
         'MsgBox("ASCII code is " & Asc(txtGender.Text), MsgBoxStyle.Exclamation, "Problem with Gender")
         If Asc(txtGender.Text) <> 70 Then
@@ -68,7 +75,7 @@
         students(studentCount).firstname = txtFirstName.Text
         students(studentCount).lastname = txtLastName.Text
         students(studentCount).DOB = txtDOB.Text
-        students(studentCount).gender = txtGender.Text
+        students(studentCount).gender = LCase(txtGender.Text)
         students(studentCount).avMk = txtAvMk.Text
         students(studentCount).phoneNo = txtPhone.Text
         students(studentCount).paid = chkPaid.Checked
