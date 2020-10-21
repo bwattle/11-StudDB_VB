@@ -59,7 +59,7 @@
         'Validate that the gender field holds "m" of "f"
         'ASCII for F=70, M=77, f=102, m=109
         'MsgBox("ASCII code is " & Asc(txtGender.Text), MsgBoxStyle.Exclamation, "Problem with Gender")
-        If Asc(txtGender.Text) <> 70 Then
+        If LCase(txtGender.Text) <> "m" Then
             If Asc(txtGender.Text) <> 77 Then
                 If Asc(txtGender.Text) <> 102 Then
                     If Asc(txtGender.Text) <> 109 Then
