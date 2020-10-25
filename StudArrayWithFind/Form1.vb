@@ -48,27 +48,48 @@
         displayList()
     End Sub
     Private Sub btnAddStud_Click(sender As Object, e As EventArgs) Handles btnAddStud.Click
-        'Validate that first name field is NOT blank
+        'Validate that the first name field is NOT blank
         If txtFirstName.Text = "" Then
-            'MsgBox("Please enter a 'first name'", MsgBoxStyle.Exclamation, "Check First Name field")
-            MessageBox.Show("Please enter a 'first name'", "Check First Name field", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+            MsgBox("Please enter a 'first name'", MsgBoxStyle.Exclamation, "Check First Name field")
+            'MessageBox.Show("Please enter a 'first name'", "Check First Name field", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
             txtFirstName.Focus()
             Exit Sub
         End If
-
+        'Validate that the last name field is NOT blank
+        If txtLastName.Text = "" Then
+            MsgBox("Please enter a 'last name'", MsgBoxStyle.Exclamation, "Check Last Name field")
+            txtLastName.Focus()
+            Exit Sub
+        End If
+        'Validate that the date field is in date format
+        If Not IsDate(txtDOB.Text) Then
+            MsgBox("Please enter in the format 'd/mm/yy'", MsgBoxStyle.Exclamation, "Check Date Of Birth field")
+            txtDOB.Focus()
+            Exit Sub
+        End If
         'Validate that the gender field holds "m" of "f"
-        'ASCII for F=70, M=77, f=102, m=109
-        'MsgBox("ASCII code is " & Asc(txtGender.Text), MsgBoxStyle.Exclamation, "Problem with Gender")
-        If Asc(txtGender.Text) <> 70 Then
-            If Asc(txtGender.Text) <> 77 Then
-                If Asc(txtGender.Text) <> 102 Then
-                    If Asc(txtGender.Text) <> 109 Then
-                        MsgBox("Please enter 'm' or 'f'", MsgBoxStyle.Exclamation, "Problem with Gender")
-                        txtGender.Focus()
-                        Exit Sub
-                    End If
-                End If
-            End If
+        If Not (LCase(txtGender.Text) = "m" Or LCase(txtGender.Text) = "f") Then
+            MsgBox("Please enter 'f' or 'm' ", MsgBoxStyle.Exclamation, "Check Gender field")
+            txtGender.Focus()
+            Exit Sub
+        End If
+        'Validate that the average mark field is a number
+        If Not IsNumeric(txtAvMk.Text) Then
+            MsgBox("Please ensure Average Mark is a number", MsgBoxStyle.Exclamation, "Check the Average Mark field")
+            txtAvMk.Focus()
+            Exit Sub
+        End If
+        'Validate that the average mark field is betweem 0 and 100 inclusive
+        If Not (txtAvMk.Text >= 0 And txtAvMk.Text <= 100) Then
+            MsgBox("Please ensure Average Mark is between 0 and 100", MsgBoxStyle.Exclamation, "Check the Average Mark field")
+            txtAvMk.Focus()
+            Exit Sub
+        End If
+        'Validate that the phone # field has 10 digits
+        If Not Len(txtPhone.Text) = 12 Then
+            MsgBox("Please enter 10 digits for the phone number", MsgBoxStyle.Exclamation, "Check Phone # field")
+            txtPhone.Focus()
+            Exit Sub
         End If
 
         'place text from text boxes into the array - first students(0), then students(1), students(2) etc
@@ -101,4 +122,5 @@
                               students(i).paid & ".")
         Next
     End Sub
+
 End Class

@@ -39,6 +39,7 @@ Partial Class Form1
         Me.chkPaid = New System.Windows.Forms.CheckBox()
         Me.txtPhone = New System.Windows.Forms.MaskedTextBox()
         Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtFirstName
@@ -85,7 +86,7 @@ Partial Class Form1
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(248, 64)
+        Me.Label4.Location = New System.Drawing.Point(248, 53)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(66, 13)
         Me.Label4.TabIndex = 6
@@ -103,9 +104,9 @@ Partial Class Form1
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(354, 64)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(42, 13)
+        Me.Label5.Size = New System.Drawing.Size(97, 13)
         Me.Label5.TabIndex = 8
-        Me.Label5.Text = "Gender"
+        Me.Label5.Text = "Gender (""m"" or ""f"")"
         '
         'txtGender
         '
@@ -119,9 +120,9 @@ Partial Class Form1
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(460, 64)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(65, 13)
+        Me.Label6.Size = New System.Drawing.Size(101, 13)
         Me.Label6.TabIndex = 10
-        Me.Label6.Text = "Average Mk"
+        Me.Label6.Text = "Average Mk (0-100)"
         '
         'txtAvMk
         '
@@ -132,7 +133,7 @@ Partial Class Form1
         '
         'btnAddStud
         '
-        Me.btnAddStud.Location = New System.Drawing.Point(449, 129)
+        Me.btnAddStud.Location = New System.Drawing.Point(455, 129)
         Me.btnAddStud.Name = "btnAddStud"
         Me.btnAddStud.Size = New System.Drawing.Size(104, 23)
         Me.btnAddStud.TabIndex = 11
@@ -183,11 +184,21 @@ Partial Class Form1
         Me.Label7.TabIndex = 17
         Me.Label7.Text = "Phone"
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(247, 69)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(55, 13)
+        Me.Label9.TabIndex = 18
+        Me.Label9.Text = "(d/mm/yy)"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(611, 391)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtPhone)
         Me.Controls.Add(Me.chkPaid)
@@ -206,7 +217,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFirstName)
         Me.Name = "Form1"
-        Me.Text = "v1.7.2 Student entry form"
+        Me.Text = "v1.7.5 Student entry form - Validation on Submit - finished"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -231,4 +242,5 @@ Partial Class Form1
     Friend WithEvents chkPaid As CheckBox
     Friend WithEvents txtPhone As MaskedTextBox
     Friend WithEvents Label7 As Label
+    Friend WithEvents Label9 As Label
 End Class
