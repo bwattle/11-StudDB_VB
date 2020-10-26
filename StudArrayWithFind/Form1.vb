@@ -55,9 +55,21 @@
             txtFirstName.Focus()
             Exit Sub
         End If
+        'Validate that the first name field is NOT more than 20 characters
+        If Len(txtFirstName.Text) > 20 Then
+            MsgBox("Please enter a 'first name' less than 20 characters", MsgBoxStyle.Exclamation, "Check First Name field")
+            txtFirstName.Focus()
+            Exit Sub
+        End If
         'Validate that the last name field is NOT blank
         If txtLastName.Text = "" Then
             MsgBox("Please enter a 'last name'", MsgBoxStyle.Exclamation, "Check Last Name field")
+            txtLastName.Focus()
+            Exit Sub
+        End If
+        'Validate that the last name field is NOT more than 20 characters
+        If Len(txtLastName.Text) > 20 Then
+            MsgBox("Please enter a 'last name' less than 20 characters", MsgBoxStyle.Exclamation, "Check Last Name field")
             txtLastName.Focus()
             Exit Sub
         End If
@@ -123,4 +135,7 @@
         Next
     End Sub
 
+    Private Sub txtFirstName_TextChanged(sender As Object, e As EventArgs) Handles txtFirstName.Validating
+
+    End Sub
 End Class
