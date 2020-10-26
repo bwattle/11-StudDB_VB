@@ -135,7 +135,4 @@
         Next
     End Sub
 
-    Private Sub txtFirstName_TextChanged(sender As Object, e As EventArgs) Handles txtFirstName.Validating
-
-    End Sub
 End Class
