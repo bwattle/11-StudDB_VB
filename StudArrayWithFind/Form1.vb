@@ -73,9 +73,15 @@
             txtLastName.Focus()
             Exit Sub
         End If
-        'Validate that the date field is in date format
+        'Validate that the DoB field is in date format
         If Not IsDate(txtDOB.Text) Then
             MsgBox("Please enter in the format 'd/mm/yy'", MsgBoxStyle.Exclamation, "Check Date Of Birth field")
+            txtDOB.Focus()
+            Exit Sub
+        End If
+        'Validate that the DoB field is between year 1960 and year 2010
+        If Not (txtDOB.Text >= #1/1/1960# AndAlso txtDOB.Text < #1/1/2011#) Then
+            MsgBox("Please enter in a DoB between 1960 and 2010 in the format 'd/mm/yy'", MsgBoxStyle.Exclamation, "Check Date Of Birth field")
             txtDOB.Focus()
             Exit Sub
         End If

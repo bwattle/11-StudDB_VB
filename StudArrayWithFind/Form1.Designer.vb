@@ -189,9 +189,9 @@ Partial Class Form1
         Me.Label9.AutoSize = True
         Me.Label9.Location = New System.Drawing.Point(247, 69)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(55, 13)
+        Me.Label9.Size = New System.Drawing.Size(65, 13)
         Me.Label9.TabIndex = 18
-        Me.Label9.Text = "(d/mm/yy)"
+        Me.Label9.Text = "(d/mm/yyyy)"
         '
         'Form1
         '
