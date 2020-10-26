@@ -85,7 +85,7 @@
             txtAvMk.Focus()
             Exit Sub
         End If
-        'Validate that the phone # field has 10 digits
+        'Validate that the phone # field has 10 digits (in fact 12, with the 2 dashes)
         If Not Len(txtPhone.Text) = 12 Then
             MsgBox("Please enter 10 digits for the phone number", MsgBoxStyle.Exclamation, "Check Phone # field")
             txtPhone.Focus()
