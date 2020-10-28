@@ -209,7 +209,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFirstName)
         Me.Name = "Form1"
-        Me.Text = "v1.7.7 Student entry form - Validation on on each field"
+        Me.Text = "v1.8.1 Student entry form - Adding a FIND function"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

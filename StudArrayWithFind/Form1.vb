@@ -147,7 +147,7 @@
     Private Sub txtFirstName_TextChanged(sender As Object, e As EventArgs) Handles txtFirstName.Validating
         If txtFirstName.Text = "" Then
             MsgBox("Please enter a 'first name'", MsgBoxStyle.Exclamation, "Check First Name field")
-            txtFirstName.Focus()
+            'txtFirstName.Focus()
             Exit Sub
         End If
         'Validate that the first name field is NOT more than 20 characters
@@ -207,6 +207,28 @@
             MsgBox("Please enter 10 digits for the phone number", MsgBoxStyle.Exclamation, "Check Phone # field")
             'txtPhone.Focus()
             Exit Sub
+        End If
+    End Sub
+
+    Private Sub btnFindStud_Click(sender As Object, e As EventArgs)
+        If IsDBNull(txtLastName.Text) Then
+            MsgBox("Please add a 'Last Name' to be searched", MsgBoxStyle.Exclamation, "Add search name to 'Last Name'.")
+            Exit Sub
+        End If
+        Dim foundName = False
+        Dim searchCount As Integer = 0
+        While searchCount < studentCount And foundName = False
+            searchCount = searchCount + 1
+            If students(searchCount).lastname = txtLastName.Text Then
+                foundName = True
+            End If
+        End While
+        If foundName Then
+            lstStud.Items.Add("Your student is " & students(searchCount).firstname &
+                 " - " & students(searchCount).lastname & " - " & students(searchCount).DOB &
+                 " - " & students(searchCount).gender & " - " & students(searchCount).avMk & ".")
+        Else
+            lstStud.Items.Add("This student cannot be found! ")
         End If
     End Sub
 End Class
