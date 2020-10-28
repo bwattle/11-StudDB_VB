@@ -80,11 +80,12 @@
             Exit Sub
         End If
         'Validate that the DoB field is between year 1960 and year 2010
-        If Not (txtDOB.Text >= #1/1/1960# AndAlso txtDOB.Text < #1/1/2011#) Then
-            MsgBox("Please enter in a DoB between 1960 and 2010 in the format 'd/mm/yy'", MsgBoxStyle.Exclamation, "Check Date Of Birth field")
+        If Not (txtDOB.Text >= #1/1/1998# AndAlso txtDOB.Text < #1/1/2005#) Then
+            MsgBox("Please enter a DoB between 1998 and 2004 in the format 'd/mm/yy'", MsgBoxStyle.Exclamation, "Check Date Of Birth field")
             txtDOB.Focus()
             Exit Sub
         End If
+
         'Validate that the gender field holds "m" of "f"
         If Not (LCase(txtGender.Text) = "m" Or LCase(txtGender.Text) = "f") Then
             MsgBox("Please enter 'f' or 'm' ", MsgBoxStyle.Exclamation, "Check Gender field")
@@ -104,7 +105,7 @@
             Exit Sub
         End If
         'Validate that the phone # field has 10 digits (in fact 12, with the 2 dashes)
-        If Not Len(txtPhone.Text) = 12 Then
+        If Not Len(Trim(txtPhone.Text)) = 12 Then
             MsgBox("Please enter 10 digits for the phone number", MsgBoxStyle.Exclamation, "Check Phone # field")
             txtPhone.Focus()
             Exit Sub
@@ -122,12 +123,14 @@
         'return text boxes to blank ready for next entry
         txtFirstName.Text = ""
         txtLastName.Text = ""
-        txtDOB.Text = ""
+        txtDOB.Text = #1/01/2003#
         txtGender.Text = ""
         txtAvMk.Text = ""
         txtPhone.Text = ""
         chkPaid.Checked = False
         displayList()
+
+        txtFirstName.Focus()
     End Sub
     Private Sub displayList()
         'clear the list box as it keeps the earlier loop
@@ -141,4 +144,69 @@
         Next
     End Sub
 
+    Private Sub txtFirstName_TextChanged(sender As Object, e As EventArgs) Handles txtFirstName.Validating
+        If txtFirstName.Text = "" Then
+            MsgBox("Please enter a 'first name'", MsgBoxStyle.Exclamation, "Check First Name field")
+            txtFirstName.Focus()
+            Exit Sub
+        End If
+        'Validate that the first name field is NOT more than 20 characters
+        If Len(txtFirstName.Text) > 20 Then
+            MsgBox("Please enter a 'first name' less than 20 characters", MsgBoxStyle.Exclamation, "Check First Name field")
+            'txtFirstName.Focus()
+            Exit Sub
+        End If
+
+    End Sub
+
+    Private Sub txtLastName_TextChanged(sender As Object, e As EventArgs) Handles txtLastName.Validating
+        'Validate that the last name field is NOT blank
+        If txtLastName.Text = "" Then
+            MsgBox("Please enter a 'last name'", MsgBoxStyle.Exclamation, "Check Last Name field")
+            Exit Sub
+        End If
+        'Validate that the last name field is NOT more than 20 characters
+        If Len(txtLastName.Text) > 20 Then
+            MsgBox("Please enter a 'last name' less than 20 characters", MsgBoxStyle.Exclamation, "Check Last Name field")
+            Exit Sub
+        End If
+    End Sub
+
+    Private Sub txtGender_TextChanged(sender As Object, e As EventArgs) Handles txtGender.Validating
+        'Validate that the gender field holds "m" of "f"
+        If Not (LCase(txtGender.Text) = "m" Or LCase(txtGender.Text) = "f") Then
+            MsgBox("Please enter 'f' or 'm' ", MsgBoxStyle.Exclamation, "Check Gender field")
+            'txtGender.Focus()
+            Exit Sub
+        End If
+    End Sub
+
+    'Private Sub txtDOB_GotFocus(sender As Object, e As EventArgs) Handles txtDOB.GotFocus
+    '    SendKeys.Send("{Left}")
+    '    SendKeys.Send("{Left}")
+    '    'SendKeys.Send("{Left}")
+    'End Sub
+    Private Sub txtAvMk_TextChanged(sender As Object, e As EventArgs) Handles txtAvMk.Validating
+        'Validate that the average mark field is a number
+        If Not IsNumeric(txtAvMk.Text) Then
+            MsgBox("Please ensure Average Mark is a number", MsgBoxStyle.Exclamation, "Check the Average Mark field")
+            'txtAvMk.Focus()
+            Exit Sub
+        End If
+        'Validate that the average mark field is betweem 0 and 100 inclusive
+        If Not (txtAvMk.Text >= 0 And txtAvMk.Text <= 100) Then
+            MsgBox("Please ensure Average Mark is between 0 and 100", MsgBoxStyle.Exclamation, "Check the Average Mark field")
+            'txtAvMk.Focus()
+            Exit Sub
+        End If
+    End Sub
+
+    Private Sub txtPhone_TextChanged(sender As Object, e As EventArgs) Handles txtPhone.Validating
+        'Validate that the phone # field has 10 digits (in fact 12, with the 2 dashes)
+        If Not Len(Trim(txtPhone.Text)) = 12 Then
+            MsgBox("Please enter 10 digits for the phone number", MsgBoxStyle.Exclamation, "Check Phone # field")
+            'txtPhone.Focus()
+            Exit Sub
+        End If
+    End Sub
 End Class
