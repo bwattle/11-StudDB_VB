@@ -8,6 +8,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F69EBE1C-6DB7-4A1C-A91C-F7955AE735E0}"
 	ProjectSection(SolutionItems) = preProject
 		index.html = index.html
+		LICENSE = LICENSE
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{05447B21-8AA8-4083-B2DE-BA134975E0B9}"
@@ -15,6 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{05447B
 		images\clip_image001.png = images\clip_image001.png
 		images\clip_image002.png = images\clip_image002.png
 		images\clip_image003.png = images\clip_image003.png
+		LICENSE = LICENSE
 	EndProjectSection
 EndProject
 Global

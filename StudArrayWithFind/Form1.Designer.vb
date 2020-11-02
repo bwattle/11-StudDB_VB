@@ -39,6 +39,11 @@ Partial Class Form1
         Me.txtPhone = New System.Windows.Forms.MaskedTextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtDOB = New System.Windows.Forms.DateTimePicker()
+        Me.btnFindStud = New System.Windows.Forms.Button()
+        Me.txtTestItem = New System.Windows.Forms.TextBox()
+        Me.txtTestIndex = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'txtFirstName
@@ -51,9 +56,10 @@ Partial Class Form1
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(36, 35)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(107, 13)
+        Me.Label1.Size = New System.Drawing.Size(183, 20)
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "Enter Student Details"
         '
@@ -135,7 +141,7 @@ Partial Class Form1
         'lstStud
         '
         Me.lstStud.FormattingEnabled = True
-        Me.lstStud.Location = New System.Drawing.Point(39, 199)
+        Me.lstStud.Location = New System.Drawing.Point(39, 218)
         Me.lstStud.Name = "lstStud"
         Me.lstStud.Size = New System.Drawing.Size(533, 160)
         Me.lstStud.TabIndex = 15
@@ -143,7 +149,7 @@ Partial Class Form1
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(39, 183)
+        Me.Label8.Location = New System.Drawing.Point(39, 202)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(172, 13)
         Me.Label8.TabIndex = 16
@@ -186,11 +192,57 @@ Partial Class Form1
         Me.txtDOB.TabIndex = 2
         Me.txtDOB.Value = New Date(2003, 1, 1, 0, 0, 0, 0)
         '
+        'btnFindStud
+        '
+        Me.btnFindStud.Location = New System.Drawing.Point(447, 178)
+        Me.btnFindStud.Name = "btnFindStud"
+        Me.btnFindStud.Size = New System.Drawing.Size(144, 23)
+        Me.btnFindStud.TabIndex = 12
+        Me.btnFindStud.Text = "Find Student by Surname"
+        Me.btnFindStud.UseVisualStyleBackColor = True
+        '
+        'txtTestItem
+        '
+        Me.txtTestItem.Location = New System.Drawing.Point(38, 180)
+        Me.txtTestItem.Name = "txtTestItem"
+        Me.txtTestItem.Size = New System.Drawing.Size(315, 20)
+        Me.txtTestItem.TabIndex = 18
+        '
+        'txtTestIndex
+        '
+        Me.txtTestIndex.Location = New System.Drawing.Point(380, 180)
+        Me.txtTestIndex.Name = "txtTestIndex"
+        Me.txtTestIndex.Size = New System.Drawing.Size(55, 20)
+        Me.txtTestIndex.TabIndex = 19
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(41, 167)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(194, 13)
+        Me.Label9.TabIndex = 20
+        Me.Label9.Text = "Test field for selected element in list box"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(372, 167)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(73, 13)
+        Me.Label10.TabIndex = 21
+        Me.Label10.Text = "Element index"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(611, 391)
+        Me.Controls.Add(Me.Label10)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.txtTestIndex)
+        Me.Controls.Add(Me.txtTestItem)
+        Me.Controls.Add(Me.btnFindStud)
         Me.Controls.Add(Me.txtDOB)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtPhone)
@@ -209,7 +261,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFirstName)
         Me.Name = "Form1"
-        Me.Text = "v1.8.1 Student entry form - Adding a FIND function"
+        Me.Text = "v1.8.3 Student entry form - tests for ListBox items"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -234,4 +286,9 @@ Partial Class Form1
     Friend WithEvents txtPhone As MaskedTextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtDOB As DateTimePicker
+    Friend WithEvents btnFindStud As Button
+    Friend WithEvents txtTestItem As TextBox
+    Friend WithEvents txtTestIndex As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Label10 As Label
 End Class
