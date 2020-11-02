@@ -39,6 +39,7 @@ Partial Class Form1
         Me.txtPhone = New System.Windows.Forms.MaskedTextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.txtDOB = New System.Windows.Forms.DateTimePicker()
+        Me.btnFindStud = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtFirstName
@@ -87,9 +88,9 @@ Partial Class Form1
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(248, 64)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(191, 13)
+        Me.Label4.Size = New System.Drawing.Size(245, 13)
         Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Date of Birth (you can type d/mm/yyyy)"
+        Me.Label4.Text = "Date of Birth 1998-2005 (you can type d/mm/yyyy)"
         '
         'Label5
         '
@@ -186,11 +187,21 @@ Partial Class Form1
         Me.txtDOB.TabIndex = 2
         Me.txtDOB.Value = New Date(2003, 1, 1, 0, 0, 0, 0)
         '
+        'btnFindStud
+        '
+        Me.btnFindStud.Location = New System.Drawing.Point(455, 159)
+        Me.btnFindStud.Name = "btnFindStud"
+        Me.btnFindStud.Size = New System.Drawing.Size(104, 23)
+        Me.btnFindStud.TabIndex = 12
+        Me.btnFindStud.Text = "Find Student"
+        Me.btnFindStud.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(611, 391)
+        Me.Controls.Add(Me.btnFindStud)
         Me.Controls.Add(Me.txtDOB)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txtPhone)
@@ -209,7 +220,7 @@ Partial Class Form1
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtFirstName)
         Me.Name = "Form1"
-        Me.Text = "v1.8.1 Student entry form - Adding a FIND function"
+        Me.Text = "v1.8.2 Student entry form - Infinite Loop error on Find"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -234,4 +245,5 @@ Partial Class Form1
     Friend WithEvents txtPhone As MaskedTextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents txtDOB As DateTimePicker
+    Friend WithEvents btnFindStud As Button
 End Class

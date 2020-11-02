@@ -144,81 +144,15 @@
         Next
     End Sub
 
-    Private Sub txtFirstName_TextChanged(sender As Object, e As EventArgs) Handles txtFirstName.Validating
-        If txtFirstName.Text = "" Then
-            MsgBox("Please enter a 'first name'", MsgBoxStyle.Exclamation, "Check First Name field")
-            'txtFirstName.Focus()
-            Exit Sub
-        End If
-        'Validate that the first name field is NOT more than 20 characters
-        If Len(txtFirstName.Text) > 20 Then
-            MsgBox("Please enter a 'first name' less than 20 characters", MsgBoxStyle.Exclamation, "Check First Name field")
-            'txtFirstName.Focus()
-            Exit Sub
-        End If
-
-    End Sub
-
-    Private Sub txtLastName_TextChanged(sender As Object, e As EventArgs) Handles txtLastName.Validating
-        'Validate that the last name field is NOT blank
+    Private Sub btnFindStud_Click(sender As Object, e As EventArgs) Handles btnFindStud.Click
         If txtLastName.Text = "" Then
-            MsgBox("Please enter a 'last name'", MsgBoxStyle.Exclamation, "Check Last Name field")
-            Exit Sub
-        End If
-        'Validate that the last name field is NOT more than 20 characters
-        If Len(txtLastName.Text) > 20 Then
-            MsgBox("Please enter a 'last name' less than 20 characters", MsgBoxStyle.Exclamation, "Check Last Name field")
-            Exit Sub
-        End If
-    End Sub
-
-    Private Sub txtGender_TextChanged(sender As Object, e As EventArgs) Handles txtGender.Validating
-        'Validate that the gender field holds "m" of "f"
-        If Not (LCase(txtGender.Text) = "m" Or LCase(txtGender.Text) = "f") Then
-            MsgBox("Please enter 'f' or 'm' ", MsgBoxStyle.Exclamation, "Check Gender field")
-            'txtGender.Focus()
-            Exit Sub
-        End If
-    End Sub
-
-    'Private Sub txtDOB_GotFocus(sender As Object, e As EventArgs) Handles txtDOB.GotFocus
-    '    SendKeys.Send("{Left}")
-    '    SendKeys.Send("{Left}")
-    '    'SendKeys.Send("{Left}")
-    'End Sub
-    Private Sub txtAvMk_TextChanged(sender As Object, e As EventArgs) Handles txtAvMk.Validating
-        'Validate that the average mark field is a number
-        If Not IsNumeric(txtAvMk.Text) Then
-            MsgBox("Please ensure Average Mark is a number", MsgBoxStyle.Exclamation, "Check the Average Mark field")
-            'txtAvMk.Focus()
-            Exit Sub
-        End If
-        'Validate that the average mark field is betweem 0 and 100 inclusive
-        If Not (txtAvMk.Text >= 0 And txtAvMk.Text <= 100) Then
-            MsgBox("Please ensure Average Mark is between 0 and 100", MsgBoxStyle.Exclamation, "Check the Average Mark field")
-            'txtAvMk.Focus()
-            Exit Sub
-        End If
-    End Sub
-
-    Private Sub txtPhone_TextChanged(sender As Object, e As EventArgs) Handles txtPhone.Validating
-        'Validate that the phone # field has 10 digits (in fact 12, with the 2 dashes)
-        If Not Len(Trim(txtPhone.Text)) = 12 Then
-            MsgBox("Please enter 10 digits for the phone number", MsgBoxStyle.Exclamation, "Check Phone # field")
-            'txtPhone.Focus()
-            Exit Sub
-        End If
-    End Sub
-
-    Private Sub btnFindStud_Click(sender As Object, e As EventArgs)
-        If IsDBNull(txtLastName.Text) Then
             MsgBox("Please add a 'Last Name' to be searched", MsgBoxStyle.Exclamation, "Add search name to 'Last Name'.")
             Exit Sub
         End If
         Dim foundName = False
         Dim searchCount As Integer = 0
         While searchCount < studentCount And foundName = False
-            searchCount = searchCount + 1
+            searchCount = searchCount  '+1 has been removed as an example of AN INFINITE LOOP
             If students(searchCount).lastname = txtLastName.Text Then
                 foundName = True
             End If
@@ -231,4 +165,5 @@
             lstStud.Items.Add("This student cannot be found! ")
         End If
     End Sub
+
 End Class
